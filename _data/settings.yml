@@ -4,12 +4,12 @@
 #   disqus_shortname: 'https-lenpaul-github-io-lagrange'
 
 # If you are not using Google Analytics, please change 'google-ID' to an empty string
-google-ID: ''
+google-ID: 'G-JHX17ETYFP'
 
 menu:
 - {name: 'About',   url: 'about.html'}
 - {name: 'Writing', url: 'writing.html'}
-- {name: 'Contact', url: 'contact.html'}
+- {name: 'Contact', url: 'cv.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
