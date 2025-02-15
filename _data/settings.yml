@@ -7,9 +7,9 @@
 google-ID: 'G-JHX17ETYFP'
 
 menu:
-- {name: 'About',   url: 'about.html'}
+- {name: 'About Me',   url: 'about.html'}
 - {name: 'Writing', url: 'writing.html'}
-- {name: 'Contact', url: 'cv.html'}
+- {name: 'Archive', url: 'archive.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
