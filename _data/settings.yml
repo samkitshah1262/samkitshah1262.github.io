@@ -8,14 +8,14 @@ google-ID: 'G-JHX17ETYFP'
 
 menu:
 - {name: 'About Me',   url: 'about.html'}
-- {name: 'Writing', url: 'writing.html'}
+# - {name: 'Writing', url: 'writing.html'}
 - {name: 'Archive', url: 'archive.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
 - {icon: 'github',     link: 'https://www.github.com/samkitshah1262'}
 - {icon: 'twitter',    link: 'https://twitter.com/samkit1262'}
-- {icon: 'linkedin',   link: 'http://www.linkedin.com/in/samkitshah1262/'}
+- {icon: 'linkedin',   link: 'https://www.linkedin.com/in/samkitshah1262/'}
 - {icon: 'envelope',   link: 'mailto:samkitshah1262@gmail.com'}
 # - {icon: 'rss-square', link: '/feed.xml'}
 # - {icon: 'rss-square', link: '/rss-feed.xml'}
