@@ -15,19 +15,19 @@ Reconstruction from a Single Image
 without 3D Supervision
 
 # Fundamentals
-- [NerFs](/nerfs)
+- [NerFs](nerfs)
 - Gaussian Splatting
-- [Intro to RLHF: DPO v/s PPO v/s GRPO](/rlhf)
+- [Intro to RLHF: DPO v/s PPO v/s GRPO](rlhf)
 - EEG, fMRI Signals
-
+- LoRA
 
 # System Design
-- [Low-level Design](/lld)
+- [Low-level Design](lld)
 - Cadence 
 
 # Contest Editorials 
   
-- Codeforces #1004
+- [Codeforces #1004](cf1004)
 - Leetcode Biweekly 150 
 
 # Philosphy/Psychology/Random
