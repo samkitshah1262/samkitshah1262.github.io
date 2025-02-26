@@ -18,11 +18,16 @@ without 3D Supervision
 - [NerFs](nerfs)
 - Gaussian Splatting
 - [Intro to RLHF: DPO v/s PPO v/s GRPO](rlhf)
-- EEG, fMRI Signals
+- Optimizers
 - LoRA
+- [VAEs](vae)
+- [CLIP](clip)
+- [GANs](gan)
+- Diffusion (SD,SDXL)
 
 # System Design
 - [Low-level Design](lld)
+- [High-level Design](hld)
 - Cadence 
 
 # Contest Editorials 
