@@ -19,7 +19,7 @@ without 3D Supervision
 - Gaussian Splatting
 - [Intro to RLHF: DPO v/s PPO v/s GRPO](rlhf)
 - Optimizers
-- LoRA
+- [PEFT](peft)
 - [VAEs](vae)
 - [CLIP](clip)
 - [GANs](gan)
