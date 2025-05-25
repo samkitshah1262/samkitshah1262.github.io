@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Back again - May 25, 2025"
+title: Back again - May 25, 2025
 author: "Samkit Shah"
 categories: Personal
 tags: [Reflection, Learning]
@@ -19,3 +19,9 @@ I was quite content with how 2025 started off. Things were falling into place an
 - Make some more PRs to pyneuroml / INCP repo
 - Contest and DSA consistency
 - Prepare and give GRE
+
+### Micro targets
+- Scale X reach 
+- Complete comp neuro course 
+- Write more technical blogs
+- Habituate reading to sleep
