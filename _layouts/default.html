@@ -1,13 +1,56 @@
 <!doctype html>
 <html>
-  {% include head.html %}
-  <body>
-    <div class="container">
-      {% include header.html %}
-      <div class="content-container">
-        {{ content }}
-      </div>
-      {% include footer.html %}
+{% include head.html %}
+
+<body data-theme="dark">
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+    <span id="theme-icon">☀️</span>
+  </button>
+  <div class="container">
+    {% include header.html %}
+    <div class="content-container">
+      {{ content }}
     </div>
-  </body>
+    {% include footer.html %}
+  </div>
+  <script>
+    // Dark mode functionality
+    function toggleDarkMode() {
+      const body = document.body;
+      const themeIcon = document.getElementById('theme-icon');
+
+      if (body.getAttribute('data-theme') === 'dark') {
+        body.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Load saved theme or default to dark mode
+    function loadTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const themeIcon = document.getElementById('theme-icon');
+
+      if (savedTheme === 'light') {
+        document.body.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+      } else {
+        // Default to dark mode
+        document.body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '☀️';
+        if (!savedTheme) {
+          localStorage.setItem('theme', 'dark');
+        }
+      }
+    }
+
+    // Load theme on page load
+    document.addEventListener('DOMContentLoaded', loadTheme);
+  </script>
+</body>
+
 </html>

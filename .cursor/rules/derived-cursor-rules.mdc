@@ -1,0 +1,33 @@
+---
+description: AI rules derived by SpecStory from the project AI interaction history
+globs: *
+---
+
+## AI Coding Assistant Rules
+
+### PROJECT DOCUMENTATION & CONTEXT SYSTEM
+
+This project uses Jekyll for blog post management.  All posts are stored in the `_posts` directory.  The directory structure includes standard Jekyll folders such as `_layouts`, `_includes`, `_sass`, `_data`, and `assets`.  Posts follow the naming convention `YYYY-MM-DD-title.md`. Front matter includes `layout: post`, `title`, `author`, `categories`, and `tags`.  A sample daily reflection post template has been created. The project is hosted on GitHub Pages using the `gh-pages` branch. Version updates will be noted here. Google Analytics is integrated for visitor tracking (see `_data/settings.yml`).  The Google Analytics 4 (GA4) tracking ID is `G-JHX17ETYFP`.  The `_includes/google-analytics.html` file contains the GA4 tracking code.
+
+### TECH STACK
+
+* Jekyll (for blog management)
+* Bash (for file system operations)
+* Git (for version control)
+
+### WORKFLOW & RELEASE RULES
+
+The workflow involves creating posts in markdown format and placing them in the `_posts` directory. Posts should follow the `YYYY-MM-DD-title.md` naming convention and include appropriate front matter. After creating a post, run `bundle exec jekyll build` to test the build. Then, use `git add`, `git commit`, and `git push origin gh-pages` to publish changes to GitHub Pages.  Further details on the Jekyll build and deployment process will be added as needed.  To check the status of your git repository use `git status`. To add files to the next commit use `git add <file>...`. To commit changes use `git commit -m "<your commit message>"`. To push changes to the remote repository use `git push origin gh-pages`.  Before pushing, always run `bundle exec jekyll build` to ensure the build is successful.
+
+
+### DEBUGGING
+
+Debugging will be done using standard Jekyll debugging techniques and bash commands for file system operations.  Check Jekyll build output for errors. Examine git status and commit history for version control issues. Specific debugging steps will be added as needed. Examine the Jekyll build output for errors.
+
+### CODING STANDARDS
+
+Coding standards will follow Jekyll best practices and will be further defined as needed.  All code should be well-commented and easy to understand.  Posts should use markdown format consistently.
+
+### REFERENCES
+
+* Jekyll Documentation: [Insert Jekyll Documentation Link Here]

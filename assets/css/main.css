@@ -1,0 +1,511 @@
+/* Jekyll CSS compiled from SCSS */
+
+/* Fonts */
+body { font-family: "PT Serif", Georgia, "Times New Roman", serif; }
+h1, h2, h3, h4, h5, h6, .header { font-family: "Quattrocento Sans", sans-serif; }
+code, pre { font-family: "Source Code Pro", monospace; }
+
+/* CSS Custom Properties for Dark Mode */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #505050;
+  --heading-color: #333;
+  --link-color: #333;
+  --link-hover-color: black;
+  --light-gray-color: #999;
+  --extra-light-gray-color: #ccc;
+  --code-bg-color: #f5f5f5;
+  --border-color: #ccc;
+  --header-bg: transparent;
+  --blockquote-border: #ccc;
+  --blockquote-text: #999;
+  --table-border: black;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --link-color: #e0e0e0;
+  --link-hover-color: #4dabf7;
+  --light-gray-color: #888;
+  --extra-light-gray-color: #555;
+  --code-bg-color: #2d2d2d;
+  --border-color: #444;
+  --header-bg: #1a1a1a;
+  --blockquote-border: #555;
+  --blockquote-text: #888;
+  --table-border: #555;
+}
+
+/* Dark mode toggle styles */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--text-color);
+  color: var(--bg-color);
+  border: 2px solid var(--text-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  background: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+}
+
+@media (max-width: 30em) {
+  .dark-mode-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* Base Styles */
+body {
+  font-size: 18px;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.75rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 30em) {
+  body {
+    font-size: 14px;
+    line-height: 1.5rem;
+  }
+  body h1 {
+    font-size: 1.5rem;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+a {
+  text-decoration: underline;
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  border-bottom: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+blockquote {
+  margin: 10px 20px 10px;
+  padding: 0px 15px;
+  border-left: 0.25em solid var(--blockquote-border);
+  color: var(--blockquote-text);
+  line-height: 1.5;
+}
+
+hr {
+  border-top: 1px solid var(--border-color);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid var(--table-border);
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+/* Site container */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 615px;
+}
+
+.content-container {
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90vw;
+  }
+}
+
+/* Header */
+.header {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 4rem;
+  background-color: var(--header-bg);
+  transition: background-color 0.3s ease;
+}
+
+.header a:hover {
+  color: var(--link-hover-color);
+}
+
+.header-title a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.header-subtitle {
+  color: var(--light-gray-color);
+  transition: color 0.3s ease;
+}
+
+/* Menu */
+.menu {
+  padding-top: 0.5rem;
+  display: block;
+}
+
+.menu-content {
+  float: left;
+}
+
+.menu-content a {
+  color: var(--light-gray-color);
+  font-size: 1rem;
+  padding-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons {
+  float: right;
+}
+
+.social-icons a {
+  color: var(--light-gray-color);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 30em) {
+  .social-icons {
+    float: left;
+    padding-top: 0px;
+  }
+  .menu-content {
+    margin-bottom: 5px;
+  }
+}
+
+/* Footer */
+.footer {
+  color: var(--light-gray-color);
+  text-align: center;
+  margin: 2rem;
+  transition: color 0.3s ease;
+}
+
+.footer a {
+  color: var(--light-gray-color);
+  padding: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--heading-color);
+}
+
+.footer-description {
+  display: block;
+  margin-top:3px;
+  margin-bottom: 1rem;
+  color: var(--light-gray-color);
+  font-size:0.8rem;
+  transition: color 0.3s ease;
+}
+
+/* Code */
+code, pre {
+  font-family: "Source Code Pro", monospace;
+}
+
+code {
+  padding: .25em .5em;
+  font-size: .8rem;
+  background-color: var(--code-bg-color);
+  color: var(--text-color);
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: var(--code-bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Horizontal code overflow fix */
+pre.highlight {
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* Pygments via Jekyll */
+.highlight {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  background-color: var(--code-bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.highlight pre {
+  margin-bottom: 0;
+}
+
+/* Gist via GitHub Pages */
+.gist .gist-file {
+  font-family: "Source Code Pro", monospace !important;
+}
+
+.gist .markdown-body {
+  padding: 15px;
+}
+
+.gist pre {
+  padding: 0;
+  background-color: transparent;
+}
+
+.gist .gist-file .gist-data {
+  font-size: .8rem !important;
+  line-height: 1.4;
+}
+
+.gist code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* Posts */
+.posts-container {
+  margin-bottom: 5rem;
+  padding: 0px;
+  list-style: none;
+}
+
+/* Thumbnail */
+.thumbnail-container {
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.thumbnail-container img{
+  margin-top: -11.5%;
+  margin-bottom: -11.5%;
+}
+
+/* Pagination */
+.pagination {
+  overflow: hidden;
+  font-family: "Quattrocento Sans", sans-serif;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.pagination-button {
+  color: var(--light-gray-color);
+  border: 1px solid var(--border-color);
+  padding: 15px 45px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.pagination-active {
+  color: var(--link-hover-color);
+}
+
+.pagination-active:hover {
+  background-color: var(--border-color);
+}
+
+/* Post */
+.post-date {
+  display: block;
+  margin-top:3px;
+  margin-bottom: 1rem;
+  color: var(--light-gray-color);
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size:0.8rem;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 30em) {
+  .posts h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.related {
+  padding-bottom: 2rem;
+}
+
+.related-posts {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.related-posts a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Social Icons */
+.social-icons .fa-envelope {
+  color: #f39c12;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-envelope:hover {
+  color: #f39c12;
+}
+
+.social-icons .fa-twitter {
+  color: #00aced;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-twitter:hover {
+  color: #00aced;
+}
+
+.social-icons .fa-instagram {
+  color: #375989;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-instagram:hover {
+  color: #375989;
+}
+
+.social-icons .fa-github {
+  color: #343434;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-github:hover {
+  color: #343434;
+}
+
+.social-icons .fa-linkedin {
+  color: #0073a4;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-linkedin:hover {
+  color: #0073a4;
+}
+
+.social-icons .fa-facebook {
+  color: #3d5b99;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-facebook:hover {
+  color: #3d5b99;
+}
+
+.social-icons .fa-pinterest {
+  color: #bd081c;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-pinterest:hover {
+  color: #bd081c;
+}
+
+.social-icons .fa-medium {
+  color: #00AB6C;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-medium:hover {
+  color: #00AB6C;
+}
+
+.social-icons .fa-codepen {
+  color: black;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-codepen:hover {
+  color: black;
+}
+
+.social-icons .fa-rss {
+  color: #ff6600;
+  transition: color .5s ease;
+}
+
+.social-icons .fa-rss:hover {
+  color: #ff6600;
+} 

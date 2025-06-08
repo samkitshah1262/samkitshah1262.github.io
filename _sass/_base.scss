@@ -5,8 +5,10 @@
 body {
   font-family: $serif-font-family;
   font-size: 18px;
-  color: $body-color;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   line-height: 1.75rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @media (max-width: $elements-responsive-width) {
@@ -14,12 +16,13 @@ body {
     font-size: 14px;
     line-height: 1.5rem;
   }
+
   body h1 {
     font-size: 1.5rem;
   }
 }
 
-h1{
+h1 {
   font-size: 2rem;
 }
 
@@ -27,18 +30,24 @@ h1 a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $sans-serif-font-family;
-  color: $dark-gray-color;
+  color: var(--heading-color);
 }
 
 a {
   text-decoration: underline;
-  color: $dark-gray-color;
+  color: var(--link-color);
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: $link-color;
+  color: var(--link-hover-color);
   border-bottom: none;
 }
 
@@ -51,13 +60,13 @@ img {
 blockquote {
   margin: 10px 20px 10px;
   padding: 0px 15px;
-  border-left: 0.25em solid $extra-light-gray-color;
-  color: $light-gray-color;
+  border-left: 0.25em solid var(--blockquote-border);
+  color: var(--blockquote-text);
   line-height: 1.5;
 }
 
 hr {
-  border-top: 1px solid $extra-light-gray-color;
+  border-top: 1px solid var(--border-color);
 }
 
 /*
@@ -70,11 +79,14 @@ table {
   width: 100%;
 }
 
-table, th, td {
-  border: 1px solid black;
+table,
+th,
+td {
+  border: 1px solid var(--table-border);
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
 }
