@@ -2141,6 +2141,209 @@ Read file: index.html
 
 ---
 
+Read file: _layouts/home.html
+
+---
+
+Read file: _layouts/default.html
+
+---
+
+Read file: _data/settings.yml
+
+---
+
+Your `index.html` uses the `home` layout, which in turn extends the `default` layout. The `default` layout contains the dark mode logic and toggle, so the home page should inherit all dark mode features.
+
+**Possible reasons the main page doesn't work for dark mode:**
+1. **CSS not loading:** If the home page is missing or incorrectly linking to `main.css`, styles won't apply.
+2. **JavaScript not running:** If the script is not loaded or errors occur, the toggle won't work.
+3. **HTML structure:** If the home page is rendered outside the `default` layout, the dark mode logic is skipped.
+4. **Cache issues:** Old CSS/JS may be cached in your browser.
+
+### Let's check the CSS link in the head include to ensure it's correct.
+
+#### Next step: Check the CSS link in `_includes/head.html` to ensure it points to `/assets/css/main.css` and not `/assets/css/main.scss`.
+
+I'll review that now.
+
+---
+
+Read file: _includes/head.html
+
+---
+
+The CSS link in `_includes/head.html` is correct:
+```html
+<link rel="stylesheet" href="{{ site.url}}/assets/css/main.css">
+```
+This means the home page should be loading the correct CSS for dark mode.
+
+### Troubleshooting Steps
+
+1. **If the home page is not styled in dark mode, try a hard refresh (Ctrl+Shift+R or Cmd+Shift+R) to clear your browser cache.**
+2. **If the toggle is missing or not working, check the browser console for JavaScript errors.**
+3. **If the page is still not in dark mode, the issue may be with how `site.url` is set.**
+
+#### Let's check if `site.url` is set correctly in `_config.yml`:
+
+- If `site.url` is empty or incorrect, the CSS file may not load, especially in local development.
+
+I'll check that now.
+
+---
+
+Read file: _config.yml
+
+---
+
+Your `site.url` is set to `"https://unsadkit.me"`.  
+**When running locally, this will cause the CSS to be loaded from `https://unsadkit.me/assets/css/main.css` instead of your local server.**
+
+### This is why your main page (and possibly others) do not work for dark mode locally!
+
+---
+
+## **How to Fix for Local Development**
+
+**Change this line in `_includes/head.html`:**
+```html
+<link rel="stylesheet" href="{{ site.url}}/assets/css/main.css">
+```
+**to:**
+```html
+<link rel="stylesheet" href="/assets/css/main.css">
+```
+And do the same for `syntax.css`:
+```html
+<link rel="stylesheet" href="/assets/css/syntax.css">
+```
+
+This will ensure the CSS is always loaded from the correct path, both locally and in production.
+
+---
+
+### I will make this change for you now.
+
+---
+
+```diff
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+-   <link rel="stylesheet" href="{{ site.url}}/assets/css/main.css">
+-   <link rel="stylesheet" href="{{ site.url}}/assets/css/syntax.css">
++   <link rel="stylesheet" href="/assets/css/main.css">
++   <link rel="stylesheet" href="/assets/css/syntax.css">
+    <!-- Use Atom -->
+    {% feed_meta %}
+```
+
+---
+
+```bash
+bundle exec jekyll build
+```
+
+```
+Configuration file: /Users/sshah/2024/blog/blog/_config.yml
+            Source: /Users/sshah/2024/blog/blog
+       Destination: /Users/sshah/2024/blog/blog/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+       Jekyll Feed: Generating feed for posts
+                    done in 0.104 seconds.
+ Auto-regeneration: disabled. Use --watch to enable.
+
+```
+
+---
+
+The CSS links are now fixed to work both locally and in production. 
+
+**You can now:**
+- Refresh your main page at `http://localhost:4000`
+- The dark mode should work by default, and the toggle should be visible and functional
+
+If you want to push this fix to GitHub Pages, let me know and I’ll commit and push the update!
+
+---
+
+_**User**_
+
+yes push
+
+---
+
+_**Assistant**_
+
+```bash
+git status
+```
+
+```
+(base) sshah@DCIL-MQ7VMG9707 blog % git status
+On branch gh-pages
+Your branch is up to date with 'origin/gh-pages'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .specstory/history/2025-05-31_14-32-implement-dark-mode-for-blog-site.md
+        modified:   _includes/head.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) sshah@DCIL-MQ7VMG9707 blog %
+```
+
+---
+
+```bash
+git add _includes/head.html .specstory/history/2025-05-31_14-32-implement-dark-mode-for-blog-site.md
+```
+
+```
+(base) sshah@DCIL-MQ7VMG9707 blog % 
+
+```
+
+---
+
+```bash
+git commit -m "fix: use root-relative CSS links for main.css and syntax.css for local and production dark mode support"
+```
+
+```
+<ntax.css for local and production dark mode support"
+[gh-pages 49df3f3] fix: use root-relative CSS links for main.css and syntax.css for local and production dar
+k mode support
+ 2 files changed, 218 insertions(+), 2 deletions(-)
+(base) sshah@DCIL-MQ7VMG9707 blog %
+```
+
+---
+
+```bash
+git push origin gh-pages
+```
+
+```
+(base) sshah@DCIL-MQ7VMG9707 blog % git push origin gh-pages
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 2.74 KiB | 2.74 MiB/s, done.
+Total 7 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/samkitshah1262/samkitshah1262.github.io.git
+To https://github.com/samkitshah1262/samkitshah1262-samkitshah1262.github.io.git
+   ea7d1cc..49df3f3  gh-pages -> gh-pages
+(base) sshah@DCIL-MQ7VMG9707 blog %
+```
+
+---
+
 
 
 ---
