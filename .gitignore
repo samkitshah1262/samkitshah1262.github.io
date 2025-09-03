@@ -6,6 +6,13 @@ Gemfile.lock
 .DS_Store
 .jekyll-cache
 .vscode
+<<<<<<< HEAD
+=======
+
+# jekyll
+_site/
+
+>>>>>>> aaa0585 (back again)
 # SpecStory project identity file
 .specstory/
 .specstory/.project.json
@@ -13,3 +20,17 @@ Gemfile.lock
 .specstory/.what-is-this.md
 # SpecStory derived-cursor-rules.mdc backup files
 .specstory/ai_rules_backups/*
+<<<<<<< HEAD
+=======
+# _drafts, content folder, and content folder contents
+_drafts/
+_drafts/content/*
+
+# cursorignore and cursorindexingignore
+.cursorignore
+.cursorindexingignore
+vendor
+.bundle
+.cursor
+.obsidian
+>>>>>>> aaa0585 (back again)
