@@ -4,7 +4,7 @@ A minimalist Jekyll blog powered by the Lagrange theme, featuring posts on techn
 
 ## 🌐 Live Site
 
-- **Production**: [https://unsadkit.me](https://unsadkit.me)
+- **Production**: [https://samkit.xyz](https://samkit.xyz)
 - **Local Development**: [http://localhost:4000](http://localhost:4000)
 
 ## 📋 Table of Contents
@@ -87,7 +87,7 @@ Press `Ctrl+C` in the terminal where Jekyll is running.
 title: 'Glimpse'
 description: 'PoW'
 author: 'Samkit Shah'
-url: "https://unsadkit.me"
+url: "https://samkit.xyz"
 ```
 
 ### Navigation & Social Links (`_data/settings.yml`)
