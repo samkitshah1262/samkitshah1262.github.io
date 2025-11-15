@@ -22,6 +22,7 @@ Even though my last three months have been quite eventful I am still not satisfi
 - [ ] Research/Open source 
 
 ### Micro targets
+
 - [ ] Web3 learn 
 - [ ] Complete comp neuro course 
 - [ ] Write more technical blogs

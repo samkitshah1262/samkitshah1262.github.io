@@ -19,6 +19,14 @@ highlighter:         rouge
 permalink:           /:title
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
+# Kramdown configuration for math rendering
+kramdown:
+  math_engine:       mathjax
+  syntax_highlighter: rouge
+  input:             GFM
+  hard_wrap:         false
+  auto_ids:          true
+
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'Glimpse'
 description:	       'PoW'
